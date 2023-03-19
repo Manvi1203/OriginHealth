@@ -1,7 +1,5 @@
 # OriginHealth
 
-This project is the role challenge of an internship!
-
 ## User Flow Diagram
 
 ![image](https://user-images.githubusercontent.com/77841499/226187156-1a68979e-3d5e-48de-894c-c8dbb4aa9e95.png)
@@ -34,3 +32,7 @@ ng add @angular/material
 
 4. Navigate to http://localhost:4200 in your web browser to view the project.
 
+
+### Note:
+
+This project is the role challenge of an internship!
