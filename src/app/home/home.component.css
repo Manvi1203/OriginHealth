@@ -1,0 +1,16 @@
+.image-grid{
+    display:flex;
+    /* flex-direction:row; */
+    flex-wrap:wrap;
+}
+.image-card{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 30%; /*grow | shrink | basis */
+
+}
+.image-card-image{
+    height: 172px;
+    width: 200px;
+    border-radius: 10px;
+}

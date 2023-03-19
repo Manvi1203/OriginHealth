@@ -1,0 +1,57 @@
+<!-- <div class="card mt-4">
+    <h4 class="card-header">Home</h4>
+    <div class="card-body">
+        <p>You're logged in with Angular 10 & JWT!!</p>
+        <p>Your role is: <strong>{{user.role}}</strong>.</p>
+        <p>This page can be accessed by <u>all authenticated users</u>.</p>
+        <p class="mb-1">Current user from secure api end point:</p>
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <ul *ngIf="userFromApi">
+            <li>{{userFromApi.firstName}} {{userFromApi.lastName}}</li>
+        </ul>
+    </div>
+</div>
+ -->
+
+ <div class="image-dashboard">
+    <div class="filter-controls">
+      <mat-form-field>
+        <mat-label>{{ 'Filter by Label' | translate }}</mat-label>
+        <mat-select [(value)]="selectedLabel" (selectionChange)="filterImages()">
+          <mat-option [value]="''">{{ 'All Labels' | translate }}</mat-option>
+          <mat-option *ngFor="let label of labels" [value]="label">{{ label }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  
+    <div class="image-grid">
+      <div class="image-card" class="row-cols-2" *ngFor="let image of filteredImages">
+        <img [src]="image.src" alt="" class="image-card-image">
+        <div class="image-card-labels" class="col">
+          <mat-chip-listbox>
+            <mat-chip *ngFor="let label of image.labels"
+                      [removable]="true"
+                      (removed)="removeLabel(image, label)">
+              {{ label }}
+              <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+          </mat-chip-listbox>
+          <mat-form-field>
+            <mat-label>{{ 'Add Label' | translate }}</mat-label>
+            <input matInput #labelInput>
+          </mat-form-field>
+          <button mat-raised-button color="primary"
+                  (click)="assignLabel(image, labelInput.value); labelInput.value = ''">
+            {{ 'Add' | translate }}
+          </button>
+          <!-- <mat-form-field>
+            <mat-label>{{ 'REASSIGN_LABEL' | translate }}</mat-label>
+            <mat-select [(ngModel)]="selectedLabel" (selectionChange)="assignLabel(image, selectedLabel)">
+              <mat-option *ngFor="let label of labels" [value]="label">{{ label }}</mat-option>
+            </mat-select>
+          </mat-form-field> -->
+        </div>
+      </div>
+    </div>
+  </div> 
+  
